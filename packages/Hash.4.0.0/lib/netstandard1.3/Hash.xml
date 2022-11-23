@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hash</name>
+    </assembly>
+    <members>
+        <member name="T:HashLibrary.HashedPassword">
+            <summary>
+            A hashed password.
+            </summary>
+        </member>
+        <member name="F:HashLibrary.HashedPassword.Hash">
+            <summary>
+            The password hash.
+            </summary>
+        </member>
+        <member name="F:HashLibrary.HashedPassword.Salt">
+            <summary>
+            The password salt.
+            </summary>
+        </member>
+        <member name="M:HashLibrary.HashedPassword.#ctor(System.String,System.String)">
+            <summary>
+            Ctor.
+            </summary>
+            <param name="hash">The password hash</param>
+            <param name="salt">The password salt</param>
+        </member>
+        <member name="M:HashLibrary.HashedPassword.Check(System.String)">
+            <summary>
+            Checks if the given plain text password hash is equal equivalent to this hashed one.
+            </summary>
+            <param name="password">Plain text password to check</param>
+            <returns>True if the given password are equivalent, false otherwise</returns>
+            <exception cref="T:System.ArgumentNullException">If the given password is null</exception>
+        </member>
+        <member name="M:HashLibrary.HashedPassword.New(System.String,System.Int32,System.Int32)">
+            <summary>
+            Salts and then hashes with PBKDF2 the given password.
+            </summary>
+            <param name="password">Password to salt then hash</param>
+            <param name="hashLength">Length of the generated hash</param>
+            <param name="saltLength">Length of the generated salt</param>
+            <returns>The salted and hashed password</returns>
+        </member>
+    </members>
+</doc>
